@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">WebPlugin</string>
+
+    <string name="invalid_click_hint">waiting</string>
 </resources>
