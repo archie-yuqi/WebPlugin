@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<resources>
+    <!-- blank page button text color for light theme -->
+    <color name="blank_page_button_text_color_light">#cc000000</color>
+
+    <!-- light text color for hybrid view provider. -->
+    <color name="hybrid_provider_light">#7f000000</color>
+    <!-- light text color for hybrid view provider. -->
+    <color name="no_network_tip_text_light">#66000000</color>
+</resources>

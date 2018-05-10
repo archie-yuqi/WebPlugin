@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <!-- The text size of the secondary text. -->
+    <dimen name="secondary_text_size">12sp</dimen>
+
+    <!-- The top padding of hybrid view provider. -->
+    <dimen name="hybrid_provider_padding_top">21.3dip</dimen>
+    <!-- The drawable padding of no network tip text view. -->
+    <dimen name="no_network_tip_drawable_padding">17.3dip</dimen>
+    <!-- The bottom padding of no network tip text view. -->
+    <dimen name="no_network_padding_bottom">43.3dip</dimen>
+    <!-- The extra line spacing of no network tip text view. -->
+    <dimen name="no_network_line_spacing_extra">4.7dip</dimen>
+</resources>

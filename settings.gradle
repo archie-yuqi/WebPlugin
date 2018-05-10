@@ -1,1 +1,4 @@
+// framework
+include ':frameworks:hybrid'
+
 include ':app'

@@ -21,3 +21,23 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+subprojects {
+    afterEvaluate {project ->
+        if (project.hasProperty("android")) {
+            android {
+                compileSdkVersion 27
+                buildToolsVersion "26.0.3"
+
+                defaultConfig {
+                    minSdkVersion 19
+                    targetSdkVersion 23
+                }
+
+                lintOptions {
+                    abortOnError false
+                }
+            }
+        }
+    }
+}

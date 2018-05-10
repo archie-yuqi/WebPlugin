@@ -1,12 +1,13 @@
 package com.archie.webplugin;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import com.archie.webplugin.ui.OnValidClickListener;
-import com.archie.webplugin.utils.UiUtils;
+import com.archie.webplugin.ui.hybrid.SimpleHybridActivity;
+import com.archie.webplugin.ui.widget.OnValidClickListener;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -28,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
             int viewId = view.getId();
             switch (viewId) {
                 case R.id.start_one:
-                    UiUtils.showToast(MainActivity.this, R.string.app_name);
+                    startActivity(new Intent(MainActivity.this, SimpleHybridActivity.class));
                     break;
             }
         }

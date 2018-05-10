@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <!-- Hybrid view style. -->
+    <declare-styleable name="HybridViewStyle">
+        <!-- Flag indicating whether hybrid view has progress bar. -->
+        <attr name="hybridProgressBar">
+            <!-- No progress bar. -->
+            <enum name="none" value="0" />
+            <!-- Circular progress bar. -->
+            <enum name="circular" value="1" />
+            <!-- Horizontal progress bar. -->
+            <enum name="horizontal" value="2" />
+        </attr>
+
+        <!-- Whether to show hybrid error page. -->
+        <attr name="hybridErrorPage" format="boolean" />
+
+        <!-- Whether hybrid view is pullable -->
+        <attr name="hybridPullable" format="boolean" />
+    </declare-styleable>
+</resources>

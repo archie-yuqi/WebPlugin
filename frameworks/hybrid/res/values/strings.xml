@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="web_sso_login_message">Signing in\u2026</string>
+    <string name="web_sso_login_fail">You need to sign in again</string>
+    <string name="no_network">Can\'t connect to the network</string>
+    <string name="webview_reload">Try again</string>
+    <string name="hybrid_provider">Provided by %1$s</string>
+</resources>

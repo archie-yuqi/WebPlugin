@@ -1,4 +1,4 @@
-package com.archie.webplugin.ui;
+package com.archie.webplugin.ui.widget;
 
 import android.view.View;
 
