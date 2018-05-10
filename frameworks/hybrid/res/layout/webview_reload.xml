@@ -20,5 +20,5 @@
     <Button
         android:id="@+id/reload"
         android:text="@string/webview_reload"
-        style="@style/MiuiPub.Widget.Button.Rect.BlankPage" />
+        style="@style/Pub.Widget.Button.Rect.BlankPage" />
 </LinearLayout>

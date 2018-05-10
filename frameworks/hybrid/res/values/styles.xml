@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <resources>
-    <style name="MiuiPub" />
+    <style name="Pub" />
 
     <!-- The most prominent text appearance. -->
-    <style name="MiuiPub.TextAppearance">
+    <style name="Pub.TextAppearance">
         <item name="android:textColorHighlight">?android:attr/textColorHighlight</item>
         <item name="android:textColorHint">?android:attr/textColorHint</item>
         <item name="android:textColorLink">?android:attr/textColorLink</item>
@@ -13,25 +13,25 @@
     </style>
 
     <!-- Internal text appearance. -->
-    <style name="MiuiPub.TextAppearance.Widget" />
+    <style name="Pub.TextAppearance.Widget" />
 
     <!-- The text appearance for button. -->
-    <style name="MiuiPub.TextAppearance.Widget.Button">
+    <style name="Pub.TextAppearance.Widget.Button">
         <item name="android:textStyle">normal</item>
     </style>
 
     <!-- The style of Button -->
-    <style name="MiuiPub.Widget.Button" parent="android:Widget.Button">
+    <style name="Pub.Widget.Button" parent="android:Widget.Button">
         <item name="android:singleLine">true</item>
-        <item name="android:textAppearance">@style/MiuiPub.TextAppearance.Widget.Button</item>
+        <item name="android:textAppearance">@style/Pub.TextAppearance.Widget.Button</item>
     </style>
 
     <!-- The style of rect button -->
-    <style name="MiuiPub.Widget.Button.Rect">
+    <style name="Pub.Widget.Button.Rect">
         <item name="android:background">@drawable/btn_bg_rect_light</item>
     </style>
 
-    <style name="MiuiPub.Widget.Button.Rect.BlankPage">
+    <style name="Pub.Widget.Button.Rect.BlankPage">
         <item name="android:layout_width">150dip</item>
         <item name="android:layout_height">39dip</item>
         <item name="android:textColor">@color/blank_page_button_text_color_light</item>

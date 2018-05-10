@@ -13,7 +13,7 @@
               android:textColor="@color/hybrid_provider_light"
               android:visibility="gone" />
 
-    <com.miuipub.internal.hybrid.WebContainerView
+    <com.pub.internal.hybrid.WebContainerView
         android:id="@+id/webContainer"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -31,9 +31,9 @@
             android:layout_gravity="center"
             android:visibility="gone" />
 
-    </com.miuipub.internal.hybrid.WebContainerView>
+    </com.pub.internal.hybrid.WebContainerView>
 
-    <com.miuipub.internal.hybrid.HybridProgressView
+    <com.pub.internal.hybrid.HybridProgressView
         android:id="@+id/progress_horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
