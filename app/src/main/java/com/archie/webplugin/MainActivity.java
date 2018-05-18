@@ -9,6 +9,8 @@ import android.widget.Button;
 import com.archie.webplugin.ui.hybrid.SimpleHybridActivity;
 import com.archie.webplugin.ui.widget.OnValidClickListener;
 
+import pub.hybrid.HybridActivity;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -29,7 +31,9 @@ public class MainActivity extends AppCompatActivity {
             int viewId = view.getId();
             switch (viewId) {
                 case R.id.start_one:
-                    startActivity(new Intent(MainActivity.this, SimpleHybridActivity.class));
+                    Intent intent = new Intent(MainActivity.this, SimpleHybridActivity.class);
+                    intent.putExtra(HybridActivity.EXTRA_URL, "https://m.baidu.com");
+                    startActivity(intent);
                     break;
             }
         }

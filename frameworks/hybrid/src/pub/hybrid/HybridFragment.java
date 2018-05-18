@@ -1,9 +1,10 @@
 package pub.hybrid;
 
-import android.app.Activity;
+import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.KeyEvent;
+import android.support.annotation.Nullable;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -13,35 +14,34 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * Base activity for application to use hybrid feature.
+ * Base fragment for application to use hybrid feature.
  */
-public class HybridActivity extends Activity {
+public class HybridFragment extends Fragment {
 
-    /**
-     * The name of the extra used for start url that passed to
-     * {@link HybridActivity} or {@link HybridFragment}.
-     */
-    public static final String EXTRA_URL = "com.hybrid.extra.URL";
+    private Set<pub.hybrid.HybridView> mHybridViews = new HashSet<pub.hybrid.HybridView>();
 
-    private Set<HybridView> mHybridViews = new HashSet<HybridView>();
+    @Nullable
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        return getContentView();
+    }
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(getContentView());
-        View hybridView = findViewById(R.id.hybrid_view);
-        if (hybridView != null && hybridView instanceof HybridView) {
+    public void onViewCreated(View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        View hybridView = view.findViewById(R.id.hybrid_view);
+        if (hybridView != null && hybridView instanceof pub.hybrid.HybridView) {
             String url = null;
             if (savedInstanceState != null) {
-                url = savedInstanceState.getString(EXTRA_URL);
+                url = savedInstanceState.getString(HybridActivity.EXTRA_URL);
             }
             if (url == null) {
-                Intent intent = getIntent();
+                Intent intent = getActivity().getIntent();
                 if (intent != null) {
-                    url = intent.getStringExtra(EXTRA_URL);
+                    url = intent.getStringExtra(HybridActivity.EXTRA_URL);
                 }
             }
-            registerHybridView((HybridView) hybridView, getConfigResId(), url);
+            registerHybridView((pub.hybrid.HybridView) hybridView, getConfigResId(), url);
         }
     }
 
@@ -54,7 +54,7 @@ public class HybridActivity extends Activity {
      * @return content view.
      */
     protected View getContentView() {
-        return getLayoutInflater().inflate(R.layout.hybrid_main, null);
+        return getActivity().getLayoutInflater().inflate(R.layout.hybrid_main, null);
     }
 
     /**
@@ -62,7 +62,7 @@ public class HybridActivity extends Activity {
      * data <code>com.miui.sdk.hybrid.config</code> defined in
      * AndroidManifest.xml, or res/xml/miui_hybrid_config.xml if no such value
      * found. It can be overridden to provide another config file for current
-     * activity.
+     * fragment.
      * 
      * @return resource id of config file.
      */
@@ -71,7 +71,7 @@ public class HybridActivity extends Activity {
     }
 
     /**
-     * Register a hybrid view to be managed by current activity. Note the hybrid
+     * Register a hybrid view to be managed by current fragment. Note the hybrid
      * view will not be added to UI in this method.
      * <p>
      * A hybrid view can be retrieved from the layout file
@@ -86,7 +86,7 @@ public class HybridActivity extends Activity {
     }
 
     /**
-     * Register a hybrid view to be managed by current activity. Note the hybrid
+     * Register a hybrid view to be managed by current fragment. Note the hybrid
      * view will not be added to UI in this method.
      * <p>
      * A hybrid view can be retrieved from the layout file
@@ -102,7 +102,7 @@ public class HybridActivity extends Activity {
     }
 
     /**
-     * Register a hybrid view to be managed by current activity. Note the hybrid
+     * Register a hybrid view to be managed by current fragment. Note the hybrid
      * view will not be added to UI in this method.
      * <p>
      * A hybrid view can be retrieved from the layout file
@@ -115,32 +115,32 @@ public class HybridActivity extends Activity {
      * @throws IllegalArgumentException if view is not a hybrid view.
      */
     protected final void registerHybridView(View view, int configResId, String url) {
-        if (!(view instanceof HybridView)) {
+        if (!(view instanceof pub.hybrid.HybridView)) {
             throw new IllegalArgumentException("view being registered is not a hybrid view");
         }
-        HybridView hybridView = (HybridView) view;
-        HybridManager manager = new HybridManager(this, hybridView);
+        pub.hybrid.HybridView hybridView = (pub.hybrid.HybridView) view;
+        HybridManager manager = new HybridManager(getActivity(), hybridView);
         hybridView.setHybridManager(manager);
         mHybridViews.add(hybridView);
         manager.init(configResId, url);
     }
 
     /**
-     * Unregister a hybrid view being managed by current activity. Note the
+     * Unregister a hybrid view being managed by current fragment. Note the
      * hybrid view will not be removed from UI in this method.
      * 
      * @param view the hybrid view being managed.
      * @throws IllegalArgumentException if view is not a hybrid view.
      */
     protected final void unregisterHybridView(View view) {
-        if (!(view instanceof HybridView)) {
+        if (!(view instanceof pub.hybrid.HybridView)) {
             throw new IllegalArgumentException("view being unregistered is not a hybrid view");
         }
         mHybridViews.remove(view);
     }
 
     private void destroyHybridView() {
-        for (HybridView view : mHybridViews) {
+        for (pub.hybrid.HybridView view : mHybridViews) {
             if (view != null) {
                 if (view.getParent() != null) {
                     ((ViewGroup) view.getParent()).removeView(view);
@@ -152,45 +152,45 @@ public class HybridActivity extends Activity {
     }
 
     @Override
-    protected void onStart() {
+    public void onStart() {
         super.onStart();
-        for (HybridView view : mHybridViews) {
+        for (pub.hybrid.HybridView view : mHybridViews) {
             HybridManager manager = view.getHybridManager();
             manager.onStart();
         }
     }
 
     @Override
-    protected void onResume() {
+    public void onResume() {
         super.onResume();
-        for (HybridView view : mHybridViews) {
+        for (pub.hybrid.HybridView view : mHybridViews) {
             HybridManager manager = view.getHybridManager();
             manager.onResume();
         }
     }
 
     @Override
-    protected void onPause() {
+    public void onPause() {
         super.onPause();
-        for (HybridView view : mHybridViews) {
+        for (pub.hybrid.HybridView view : mHybridViews) {
             HybridManager manager = view.getHybridManager();
             manager.onPause();
         }
     }
 
     @Override
-    protected void onStop() {
+    public void onStop() {
         super.onStop();
-        for (HybridView view : mHybridViews) {
+        for (pub.hybrid.HybridView view : mHybridViews) {
             HybridManager manager = view.getHybridManager();
             manager.onStop();
         }
     }
 
     @Override
-    protected void onDestroy() {
+    public void onDestroy() {
         super.onDestroy();
-        for (HybridView view : mHybridViews) {
+        for (pub.hybrid.HybridView view : mHybridViews) {
             HybridManager manager = view.getHybridManager();
             manager.onDestroy();
         }
@@ -198,24 +198,11 @@ public class HybridActivity extends Activity {
     }
 
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        for (HybridView view : mHybridViews) {
+        for (pub.hybrid.HybridView view : mHybridViews) {
             HybridManager manager = view.getHybridManager();
             manager.onActivityResult(requestCode, resultCode, data);
         }
-    }
-
-    @Override
-    public boolean onKeyDown(int keyCode, KeyEvent event) {
-        if (keyCode == KeyEvent.KEYCODE_BACK) {
-            for (HybridView view : mHybridViews) {
-                if (view.canGoBack() && !view.getHybridManager().isDetached()) {
-                    view.goBack();
-                    return true;
-                }
-            }
-        }
-        return super.onKeyDown(keyCode, event);
     }
 }

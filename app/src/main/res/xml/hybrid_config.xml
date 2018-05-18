@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget>
+    <access
+        origin="http://mi.com"
+        subdomains="true"/>
+    <access
+        origin="https://mi.com"
+        subdomains="true"/>
+    <access
+        origin="http://xiaomi.com"
+        subdomains="true"/>
+    <access
+        origin="https://xiaomi.com"
+        subdomains="true"/>
+</widget>
