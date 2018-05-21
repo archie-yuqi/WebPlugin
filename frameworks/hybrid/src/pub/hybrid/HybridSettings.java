@@ -1,5 +1,7 @@
 package pub.hybrid;
 
+import pub.hybrid.ui.HybridView;
+
 /**
  * Base class that can be used to manages settings state for a  {@link HybridView}.
  */

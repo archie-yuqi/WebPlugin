@@ -1,5 +1,8 @@
 package com.pub.internal.hybrid;
 
+import com.pub.internal.util.Permission;
+import com.pub.internal.util.Security;
+
 import java.util.HashMap;
 import java.util.Map;
 

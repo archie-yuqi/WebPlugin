@@ -7,6 +7,8 @@ import android.view.KeyEvent;
 
 import com.pub.internal.hybrid.HybridManager;
 
+import pub.hybrid.ui.HybridView;
+
 public class HybridChromeClient {
 
     private HybridManager mManager;
@@ -18,7 +20,7 @@ public class HybridChromeClient {
         mManager = manager;
     }
 
-    public boolean onJsAlert(pub.hybrid.HybridView view, String url, String message, final JsResult result) {
+    public boolean onJsAlert(HybridView view, String url, String message, final JsResult result) {
         new AlertDialog.Builder(mManager.getActivity()).setMessage(message)
                 .setPositiveButton(android.R.string.ok, new AlertDialog.OnClickListener() {
                     @Override
@@ -45,7 +47,7 @@ public class HybridChromeClient {
         return true;
     }
 
-    public boolean onJsConfirm(pub.hybrid.HybridView view, String url, String message, final JsResult result) {
+    public boolean onJsConfirm(HybridView view, String url, String message, final JsResult result) {
         new AlertDialog.Builder(mManager.getActivity()).setMessage(message)
                 .setPositiveButton(android.R.string.ok, new AlertDialog.OnClickListener() {
                     @Override
@@ -81,11 +83,11 @@ public class HybridChromeClient {
     public void onGeolocationPermissionsShowPrompt(String origin, GeolocationPermissions.Callback callback) {
     }
 
-    public void onProgressChanged(pub.hybrid.HybridView view, int progress) {
+    public void onProgressChanged(HybridView view, int progress) {
         view.setProgress(progress);
     }
 
-    public void onReceivedTitle(pub.hybrid.HybridView view, String title) {
+    public void onReceivedTitle(HybridView view, String title) {
     }
 
     public void openFileChooser(ValueCallback<Uri> uploadFile, String acceptType, String capture) {

@@ -8,7 +8,7 @@ import com.pub.internal.hybrid.provider.AbsWebViewClient;
 import com.pub.internal.hybrid.provider.WebViewFactoryProvider;
 
 import pub.hybrid.HybridChromeClient;
-import pub.hybrid.HybridView;
+import pub.hybrid.ui.HybridView;
 import pub.hybrid.HybridViewClient;
 
 public class WebkitFactoryProvider extends WebViewFactoryProvider {

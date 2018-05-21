@@ -1,6 +1,10 @@
-package com.pub.internal.hybrid;
+package com.pub.internal.util;
 
 import android.content.Context;
+
+import com.pub.internal.hybrid.Config;
+import com.pub.internal.hybrid.ConfigUtils;
+import com.pub.internal.hybrid.SignUtils;
 
 import java.io.BufferedReader;
 import java.io.File;

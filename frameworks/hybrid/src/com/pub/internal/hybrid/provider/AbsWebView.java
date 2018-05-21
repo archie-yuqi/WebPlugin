@@ -5,7 +5,7 @@ import android.view.View;
 
 import pub.hybrid.HybridBackForwardList;
 import pub.hybrid.HybridSettings;
-import pub.hybrid.HybridView;
+import pub.hybrid.ui.HybridView;
 
 public abstract class AbsWebView {
 

@@ -3,7 +3,7 @@ package com.pub.internal.hybrid.provider;
 import android.content.Context;
 
 import pub.hybrid.HybridChromeClient;
-import pub.hybrid.HybridView;
+import pub.hybrid.ui.HybridView;
 import pub.hybrid.HybridViewClient;
 
 /**

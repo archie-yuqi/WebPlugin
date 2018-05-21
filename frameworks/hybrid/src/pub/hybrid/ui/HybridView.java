@@ -1,9 +1,8 @@
-package pub.hybrid;
+package pub.hybrid.ui;
 
 import com.pub.internal.hybrid.provider.AbsWebChromeClient;
 import com.pub.internal.hybrid.provider.AbsWebView;
 import com.pub.internal.hybrid.HybridManager;
-import com.pub.internal.hybrid.HybridProgressView;
 import com.pub.internal.hybrid.WebContainerView;
 import com.pub.internal.hybrid.provider.AbsWebViewClient;
 import com.pub.internal.hybrid.provider.WebViewFactory;
@@ -22,6 +21,12 @@ import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+
+import pub.hybrid.HybridBackForwardList;
+import pub.hybrid.HybridChromeClient;
+import pub.hybrid.HybridSettings;
+import pub.hybrid.HybridViewClient;
+import pub.hybrid.R;
 
 public class HybridView extends FrameLayout {
 
@@ -88,15 +93,15 @@ public class HybridView extends FrameLayout {
         }
     }
 
-    HybridManager getHybridManager() {
+    public HybridManager getHybridManager() {
         return mManager;
     }
 
-    void setHybridManager(HybridManager manager) {
+    public void setHybridManager(HybridManager manager) {
         mManager = manager;
     }
 
-    AbsWebView getWebView() {
+    public AbsWebView getWebView() {
         return mWebView;
     }
 
@@ -155,7 +160,7 @@ public class HybridView extends FrameLayout {
         return mWebView.getTitle();
     }
 
-    void setProgress(int progress) {
+    public void setProgress(int progress) {
         if (progress > 80 && !mLoadingError) {
             hideReloadView();
         }
@@ -197,11 +202,11 @@ public class HybridView extends FrameLayout {
         }
     }
 
-    void setLoadingError(boolean loadingError) {
+    public void setLoadingError(boolean loadingError) {
         mLoadingError = loadingError;
     }
 
-    void showReloadView() {
+    public void showReloadView() {
         if (!mShowErrorPage) {
             return;
         }
@@ -223,7 +228,7 @@ public class HybridView extends FrameLayout {
         mWebView.setVisibility(GONE);
     }
 
-    void hideReloadView() {
+    public void hideReloadView() {
         if (!mShowErrorPage) {
             return;
         }
@@ -241,7 +246,7 @@ public class HybridView extends FrameLayout {
         }
     }
 
-    void setWebProvider(String url) {
+    public void setWebProvider(String url) {
         Uri uri = Uri.parse(url);
         String host = uri.getHost();
 

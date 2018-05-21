@@ -12,7 +12,8 @@ import android.view.View;
 import com.pub.internal.hybrid.provider.AbsWebView;
 import com.pub.internal.util.UrlResolverHelper;
 
-import pub.util.UrlResolver;
+import com.pub.internal.util.UrlResolver;
+
 public class WebViewClientDelegate {
 
     public static final int FEATURE_DEEP_LINK = 0x1;

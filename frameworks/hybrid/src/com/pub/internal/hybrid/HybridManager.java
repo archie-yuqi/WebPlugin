@@ -11,6 +11,9 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 
+import com.pub.internal.util.PermissionManager;
+import com.pub.internal.util.SecurityManager;
+
 import java.util.Set;
 import java.util.concurrent.CopyOnWriteArraySet;
 import java.util.concurrent.ExecutorService;
@@ -23,7 +26,7 @@ import pub.hybrid.HybridChromeClient;
 import pub.hybrid.HybridFeature;
 import pub.hybrid.HybridFeature.Mode;
 import pub.hybrid.HybridSettings;
-import pub.hybrid.HybridView;
+import pub.hybrid.ui.HybridView;
 import pub.hybrid.HybridViewClient;
 import pub.hybrid.LifecycleListener;
 import pub.hybrid.NativeInterface;

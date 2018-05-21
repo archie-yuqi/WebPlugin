@@ -4,7 +4,7 @@ import android.graphics.Bitmap;
 import android.net.http.SslError;
 
 import pub.hybrid.HybridResourceResponse;
-import pub.hybrid.HybridView;
+import pub.hybrid.ui.HybridView;
 import pub.hybrid.HybridViewClient;
 import pub.hybrid.SslErrorHandler;
 

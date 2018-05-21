@@ -1,4 +1,4 @@
-package pub.util;
+package com.pub.internal.util;
 
 import android.content.Context;
 import android.content.Intent;

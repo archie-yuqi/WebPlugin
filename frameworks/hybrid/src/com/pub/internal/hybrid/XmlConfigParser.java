@@ -7,6 +7,9 @@ import android.content.res.Resources.NotFoundException;
 import android.content.res.XmlResourceParser;
 import android.os.Bundle;
 
+import com.pub.internal.util.Permission;
+import com.pub.internal.util.Security;
+
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 

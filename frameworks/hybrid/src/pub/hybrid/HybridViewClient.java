@@ -9,6 +9,8 @@ import com.pub.internal.webkit.WebViewClientDelegate;
 import java.io.IOException;
 import java.util.UUID;
 
+import pub.hybrid.ui.HybridView;
+
 public class HybridViewClient {
 
     private static final String ASSET_PATH = "hybrid/";
@@ -28,7 +30,7 @@ public class HybridViewClient {
         mManager = manager;
     }
 
-    public void onPageStarted(pub.hybrid.HybridView view, String url, Bitmap favicon) {
+    public void onPageStarted(HybridView view, String url, Bitmap favicon) {
         PageContext pageContext = new PageContext();
         pageContext.setId(UUID.randomUUID().toString());
         pageContext.setUrl(url);
@@ -41,7 +43,7 @@ public class HybridViewClient {
         mWebViewClientDelegate.onPageStarted(view.getWebView(), url, favicon);
     }
 
-    public void onPageFinished(pub.hybrid.HybridView view, String url) {
+    public void onPageFinished(HybridView view, String url) {
         if (mManager.getActivity().getActionBar() != null) {
             mManager.getActivity().getActionBar().setTitle(view.getTitle());
         }
@@ -49,7 +51,7 @@ public class HybridViewClient {
         mWebViewClientDelegate.onPageFinished(view.getWebView(), url);
     }
 
-    public HybridResourceResponse shouldInterceptRequest(pub.hybrid.HybridView view, String url) {
+    public HybridResourceResponse shouldInterceptRequest(HybridView view, String url) {
         HybridResourceResponse response = null;
         if (url != null && url.startsWith("http")) {
             int index = url.indexOf(VIRTUAL_PATH);
@@ -66,21 +68,21 @@ public class HybridViewClient {
         return response;
     }
 
-    public boolean shouldOverrideUrlLoading(final pub.hybrid.HybridView view, String url) {
+    public boolean shouldOverrideUrlLoading(final HybridView view, String url) {
         return mWebViewClientDelegate.shouldOverrideUrlLoading(view.getWebView(), url);
     }
 
-    public void onReceivedSslError(pub.hybrid.HybridView view, SslErrorHandler handler, SslError error) {
+    public void onReceivedSslError(HybridView view, SslErrorHandler handler, SslError error) {
         handler.cancel();
     }
 
-    public void onReceivedError(pub.hybrid.HybridView view, int errorCode, String description, String
+    public void onReceivedError(HybridView view, int errorCode, String description, String
             failingUrl) {
         view.setLoadingError(true);
         view.showReloadView();
     }
 
-    public void onReceivedLoginRequest(pub.hybrid.HybridView view, String realm, String account, String args) {
+    public void onReceivedLoginRequest(HybridView view, String realm, String account, String args) {
         mWebViewClientDelegate.onReceivedLoginRequest(view.getWebView(), realm, account, args);
     }
 }

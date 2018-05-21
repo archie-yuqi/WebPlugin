@@ -2,7 +2,7 @@ package com.archie.webplugin.ui.hybrid;
 
 import com.archie.webplugin.R;
 
-import pub.hybrid.HybridActivity;
+import pub.hybrid.ui.HybridActivity;
 
 public class SimpleHybridActivity extends HybridActivity {
 

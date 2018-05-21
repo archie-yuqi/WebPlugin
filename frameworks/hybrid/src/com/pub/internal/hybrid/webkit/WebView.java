@@ -11,7 +11,7 @@ import com.pub.internal.hybrid.provider.AbsWebViewClient;
 
 import pub.hybrid.HybridBackForwardList;
 import pub.hybrid.HybridSettings;
-import pub.hybrid.HybridView;
+import pub.hybrid.ui.HybridView;
 
 public class WebView extends AbsWebView {
 

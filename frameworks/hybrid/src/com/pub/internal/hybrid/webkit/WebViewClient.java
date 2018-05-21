@@ -8,7 +8,7 @@ import android.webkit.WebView;
 import com.pub.internal.hybrid.provider.AbsWebViewClient;
 
 import pub.hybrid.HybridResourceResponse;
-import pub.hybrid.HybridView;
+import pub.hybrid.ui.HybridView;
 import pub.hybrid.HybridViewClient;
 import pub.hybrid.SslErrorHandler;
 

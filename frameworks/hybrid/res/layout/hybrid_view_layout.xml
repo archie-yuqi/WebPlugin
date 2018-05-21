@@ -33,7 +33,7 @@
 
     </com.pub.internal.hybrid.WebContainerView>
 
-    <com.pub.internal.hybrid.HybridProgressView
+    <pub.hybrid.ui.HybridProgressView
         android:id="@+id/progress_horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

@@ -9,7 +9,7 @@ import android.widget.Button;
 import com.archie.webplugin.ui.hybrid.SimpleHybridActivity;
 import com.archie.webplugin.ui.widget.OnValidClickListener;
 
-import pub.hybrid.HybridActivity;
+import pub.hybrid.ui.HybridActivity;
 
 public class MainActivity extends AppCompatActivity {
 

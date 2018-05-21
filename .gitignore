@@ -1,8 +1,6 @@
 *.iml
 .gradle
 .idea
-lyq19930105
-lyq19930105.pub
 gradlew
 gradlew.bat
 gradle.properties
@@ -11,4 +9,3 @@ gradle.properties
 /build
 /captures
 /gradle
-/app/.gitignore

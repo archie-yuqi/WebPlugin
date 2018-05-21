@@ -7,7 +7,7 @@ import com.pub.internal.hybrid.provider.AbsWebChromeClient;
 
 import pub.hybrid.GeolocationPermissions;
 import pub.hybrid.HybridChromeClient;
-import pub.hybrid.HybridView;
+import pub.hybrid.ui.HybridView;
 import pub.hybrid.JsResult;
 import pub.hybrid.ValueCallback;
 

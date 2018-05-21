@@ -1,5 +1,8 @@
 package com.pub.internal.hybrid;
 
+import com.pub.internal.util.Permission;
+import com.pub.internal.util.Security;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;

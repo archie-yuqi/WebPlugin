@@ -1,4 +1,4 @@
-package com.pub.internal.hybrid;
+package com.pub.internal.util;
 
 public class Permission {
 

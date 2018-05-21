@@ -1,6 +1,8 @@
-package com.pub.internal.hybrid;
+package com.pub.internal.util;
 
 import android.net.Uri;
+
+import com.pub.internal.hybrid.Config;
 
 import java.util.HashMap;
 import java.util.Map;

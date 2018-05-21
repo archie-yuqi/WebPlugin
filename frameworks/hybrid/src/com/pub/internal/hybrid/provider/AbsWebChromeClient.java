@@ -4,7 +4,7 @@ import android.net.Uri;
 
 import pub.hybrid.GeolocationPermissions;
 import pub.hybrid.HybridChromeClient;
-import pub.hybrid.HybridView;
+import pub.hybrid.ui.HybridView;
 import pub.hybrid.JsResult;
 import pub.hybrid.ValueCallback;
 

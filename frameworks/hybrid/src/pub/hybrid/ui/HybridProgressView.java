@@ -1,4 +1,4 @@
-package com.pub.internal.hybrid;
+package pub.hybrid.ui;
 
 import android.content.Context;
 import android.graphics.Canvas;
