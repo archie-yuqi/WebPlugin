@@ -1,0 +1,14 @@
+*.iml
+.gradle
+.idea
+lyq19930105
+lyq19930105.pub
+gradlew
+gradlew.bat
+gradle.properties
+/local.properties
+.DS_Store
+/build
+/captures
+/gradle
+/app/.gitignore
